@@ -13,19 +13,26 @@
 //--------------------------------------------------------------
 ofxTextWriter::ofxTextWriter()
 {
-    set("", 0);
+    reset("", 0);
 }
 
 //--------------------------------------------------------------
 ofxTextWriter::ofxTextWriter(string text, unsigned long msPerChar)
 {
-    set(text, msPerChar);
+    reset(text, msPerChar);
 }
 
 //--------------------------------------------------------------
-void ofxTextWriter::set(string text, unsigned long msPerChar)
+void ofxTextWriter::reset(string text, unsigned long msPerChar)
 {
     _text = text;
+    _time = msPerChar * _text.length();
+    reset();
+}
+
+//--------------------------------------------------------------
+void ofxTextWriter::reset(unsigned long msPerChar)
+{
     _time = msPerChar * _text.length();
     reset();
 }

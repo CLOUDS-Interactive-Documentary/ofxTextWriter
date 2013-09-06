@@ -20,7 +20,8 @@ class ofxTextWriter
         ofxTextWriter();
         ofxTextWriter(string text, unsigned long msPerChar = 100);
     
-        void set(string text, unsigned long msPerChar = 100);
+        void reset(string text, unsigned long msPerChar = 100);
+        void reset(unsigned long msPerChar);
         void reset();
         void update();
     
